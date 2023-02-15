@@ -1,0 +1,115 @@
+:root {
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #eee;
+  background-color: #111;
+  text-rendering: optimizeLegibility;
+  color-scheme: light dark;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+* {
+  box-sizing: border-box;
+}
+a {
+  font-weight: 500;
+  color: tomato;
+  text-decoration: inherit;
+}
+a:hover {
+  color: indianred;
+}
+a:focus {
+  outline: 6px solid tomato;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+section {
+  padding: 1rem;
+}
+
+iframe {
+  width: 100%;
+  aspect-ratio: 1/1.8;
+}
+
+#home p {
+  grid-area: home;
+  max-width: 30ch;
+}
+
+#tech ul {
+  grid-area: tech;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(28ch, 1fr));
+}
+
+#courses {
+  grid-area: courses;
+}
+
+#courses article {
+  display: flex;
+  max-width: 50ch;
+  flex-flow: column nowrap;
+  margin: 1em;
+  padding-inline-start: 1em;
+  border-inline-start: 2px solid #444;
+}
+#courses h3 {
+  display: flex;
+  flex-flow: column nowrap;
+}
+#projects {
+  grid-area: projects;
+}
+#community {
+  grid-area: community;
+}
+#contact {
+  grid-area: contact;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #111;
+    background-color: #eee;
+  }
+  a {
+    color: crimson;
+  }
+  a:hover {
+    color: firebrick;
+  }
+}
+
+@media (min-width: 70rem) {
+  main {
+    display: grid;
+    grid-template-columns: 24rem 1fr;
+    grid-template-areas:
+      "home courses" "tech courses" "community projects" "contact projects" ". projects";
+  }
+}
+@media (min-width: 120rem) {
+  main {
+    display: grid;
+    grid-template-columns: 24rem 1fr 1fr;
+    grid-template-areas:
+      "home courses projects" "tech courses projects" "community courses projects" "contact courses projects" ". . projects";
+  }
+}
