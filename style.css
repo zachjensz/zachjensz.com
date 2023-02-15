@@ -108,7 +108,7 @@ iframe {
 @media (min-width: 120rem) {
   main {
     display: grid;
-    grid-template-columns: 24rem 1fr 1fr;
+    grid-template-columns: 24rem 32rem 1fr;
     grid-template-areas:
       "home courses projects" "tech courses projects" "community courses projects" "contact courses projects" ". . projects";
   }
