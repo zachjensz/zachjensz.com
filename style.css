@@ -13,6 +13,10 @@
 * {
   box-sizing: border-box;
 }
+::selection {
+  background-color: firebrick;
+  color: white;
+}
 a {
   font-weight: 500;
   color: tomato;
