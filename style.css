@@ -86,6 +86,8 @@ iframe {
 }
 #contact {
   grid-area: contact;
+  display: flex;
+  flex-flow: column nowrap;
 }
 
 @media (prefers-color-scheme: light) {
