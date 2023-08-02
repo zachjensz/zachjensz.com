@@ -34,7 +34,9 @@ body {
   height: 100%;
 }
 body {
-  margin: 0;
+  margin: 0 auto;
+  padding-inline: 2rem;
+  max-width: 120ch;
 }
 
 h1 {
@@ -42,18 +44,20 @@ h1 {
   line-height: 1.1;
 }
 
-section {
-  padding: 1rem;
-}
-
 iframe {
   width: 100%;
   aspect-ratio: 1/1.8;
 }
 
+#home {
+  display: grid;
+  place-content: center;
+  height: min(80ch, 100vh);
+  text-align: center;
+}
+
 #home p {
-  grid-area: home;
-  max-width: 30ch;
+  max-width: 40ch;
 }
 
 #tech ul {
@@ -62,17 +66,16 @@ iframe {
   grid-template-columns: repeat(auto-fit, minmax(28ch, 1fr));
 }
 
-#courses {
-  grid-area: courses;
+#courses .wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(40ch, 1fr));
 }
 
 #courses article {
   display: flex;
-  max-width: 50ch;
   flex-flow: column nowrap;
   margin: 1em;
   padding-inline-start: 1em;
-  border-inline-start: 2px solid #444;
 }
 #courses h3 {
   display: flex;
@@ -103,19 +106,3 @@ iframe {
   }
 }
 
-@media (min-width: 70rem) {
-  main {
-    display: grid;
-    grid-template-columns: 24rem 1fr;
-    grid-template-areas:
-      "home courses" "tech courses" "community projects" "contact projects" ". projects";
-  }
-}
-@media (min-width: 120rem) {
-  main {
-    display: grid;
-    grid-template-columns: 24rem 32rem 1fr;
-    grid-template-areas:
-      "home courses projects" "tech courses projects" "community courses projects" "contact courses projects" ". . projects";
-  }
-}
