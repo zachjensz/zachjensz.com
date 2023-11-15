@@ -1,9 +1,13 @@
 :root {
+  --theme: #e11;
+  --background: #eee;
+  --text: #111;
+  --text-alt: #444;
+  color: var(--text);
+  background-color: var(--background);
   font-family: system-ui, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  color: #eee;
-  background-color: #111;
   text-rendering: optimizeLegibility;
   color-scheme: light dark;
   -webkit-font-smoothing: antialiased;
@@ -17,20 +21,9 @@
   background-color: firebrick;
   color: white;
 }
-a {
-  font-weight: 500;
-  color: tomato;
-  text-decoration: inherit;
-}
-a:hover {
-  color: indianred;
-}
-a:focus {
-  outline: 6px solid tomato;
-}
-
 html,
-body {
+body,
+#hero {
   height: 100%;
 }
 body {
@@ -39,35 +32,36 @@ body {
   max-width: 120ch;
 }
 
+#hero {
+  display: grid;
+  place-content: center;
+}
+
 h1 {
   position: relative;
-  max-width: 30rem;
 }
+
 h1 .name {
   position: absolute;
-  left: 1.5rem;
-  font-size: 1rem;
+  font-size: max(1rem, 0.5rem + 2vw);
+  color: var(--theme);
 }
+
 h1 .title {
-  font-size: 3rem;
+  font-size: max(1rem, 1rem + 4vw);
+  max-width: 24ch;
   line-height: 1.1;
-  text-indent: 5ch;
+  text-indent: 6ch;
+}
+
+#hero p {
+  max-width: 50ch;
+  color: var(--text-alt);
 }
 
 iframe {
   width: 100%;
   aspect-ratio: 1/1.8;
-}
-
-#home {
-  display: grid;
-  place-content: center;
-  height: min(80ch, 100vh);
-  text-align: center;
-}
-
-#home p {
-  max-width: 50ch;
 }
 
 #courses .wrapper {
@@ -97,15 +91,11 @@ iframe {
   flex-flow: column nowrap;
 }
 
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
   :root {
-    color: #111;
-    background-color: #eee;
-  }
-  a {
-    color: crimson;
-  }
-  a:hover {
-    color: firebrick;
+    --theme: #b11;
+    --background: #111;
+    --text: #eee;
+    --text-alt: #aaa;
   }
 }
