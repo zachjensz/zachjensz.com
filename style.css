@@ -70,12 +70,6 @@ iframe {
   max-width: 50ch;
 }
 
-#tech ul {
-  grid-area: tech;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(28ch, 1fr));
-}
-
 #courses .wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(40ch, 1fr));
