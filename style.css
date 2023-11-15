@@ -40,8 +40,18 @@ body {
 }
 
 h1 {
-  font-size: 3.2em;
+  position: relative;
+  max-width: 30rem;
+}
+h1 .name {
+  position: absolute;
+  left: 1.5rem;
+  font-size: 1rem;
+}
+h1 .title {
+  font-size: 3rem;
   line-height: 1.1;
+  text-indent: 5ch;
 }
 
 iframe {
@@ -57,7 +67,7 @@ iframe {
 }
 
 #home p {
-  max-width: 40ch;
+  max-width: 50ch;
 }
 
 #tech ul {
